@@ -1,14 +1,23 @@
 /* Minimalny reset  */
+.menu-box{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+
+}
+
 html {
   font-size: 16px; /* bazowy rozmiar czcionki */
   font-family: system-ui, sans-serif; /* font systemowy */
   line-height: 1.5; /* lepsza czytelność */
 }
 body {
-  margin: 1rem;
-  padding: 0;
+  max-width: 500px;
+  background-color: #f9f9f9;
+  justify-content: center;
+  margin: 0 auto;
 }
-
 a {
   color: #0066cc; /* niebieski kolor linków */
   text-decoration: none; /* bez podkreślenia */
@@ -16,4 +25,157 @@ a {
 }
 a:hover {
   text-decoration: underline; /* podkreślenie przy najechaniu */
+}
+.main_page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.main_page .imie {
+  color: #5a6b87;
+  margin-bottom: 20px;
+}
+
+.menu {
+  background-color: #b9b8b8;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,.1);
+  padding: 10px 20px;
+  width: fit-content;
+  position: relative; 
+  margin: 0 auto;
+}
+
+.menu-item{
+  padding:  20px 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  display: block;
+  text-align: center;
+}
+.indicator{
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left:0;
+  width: 150px;
+  background-color: #5a6b87;
+  border-radius: 8px;
+  transition: width 0.5s linear, transform 0.3s linear;
+}
+
+.menu-item:nth-child(2):hover ~.indicator {
+  transform: translateX(125%);
+  width: 135px;
+}
+.menu-item:nth-child(3):hover ~.indicator {
+  transform: translate(211%);
+  width: 153px;
+}
+.powrot{
+  margin-top: 20px;
+}
+
+
+/*login*/
+
+.login_box{
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width:fit-content;
+ 
+  background-color: #b9b8b8;
+  border-radius: 8px;
+  flex-direction: column;
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,.1);
+  padding: 20px 30px;
+
+}
+.login{
+  color:#fff;
+}
+.lgn_text{
+  color: #fff;
+  margin-bottom: 1px;
+
+}
+.login_box input {
+  height:23px;
+  border-radius: 15px;
+  border-style: none;
+  outline:none;
+  color:#666666;
+  padding-left: 10px;
+  padding-right: 10px;
+  
+  
+}
+
+.zaloguj{
+  background-color: #5a6b87;
+  border-radius: 20px;
+  width:70px;
+  height:30px;
+  border:none;
+  color: #fff;
+  cursor: pointer;
+  
+}
+
+
+.login_box a{
+    float: right;
+    align-self: flex-end;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+
+
+
+/*------------------------------UWAGI----------------------------*/
+
+header{
+  color: #5a6b87;
+}
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px 40px;
+}
+
+article section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+article section:last-child {
+    border-bottom: none;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #5a6b87;
+    margin-bottom: 10px;
 }
