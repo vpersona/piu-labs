@@ -1,0 +1,205 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 1rem;
+}
+
+.theme-picker {
+    border-color: #d88849;
+    border-radius: 5px;
+    background-color:  #f6f2dc;
+}
+
+.theme-picker legend{
+    font-weight: 700;
+}
+
+.theme-picker label {
+    margin-right: 20px;
+}
+
+.theme-picker input[type="radio"]{
+    margin-right:10px;
+}
+
+.container {
+  margin-top: 20px;
+  padding: 1rem;
+  border-radius: var(--radius, 5px);
+  background: #f6f2dc;
+  border: 2px solid  #d88849;
+  display: flex;
+  flex-wrap: wrap;
+  
+  gap: 1rem;
+}
+
+.item {
+  border-radius: 5px;
+  color: white;
+  padding: 1rem;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 30%;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  
+  @media (max-width:1024px){
+    flex-basis: 100%;
+  }
+}
+
+/*------blue--------*/
+body:has(input[value='blue']:checked) .container {
+  justify-content: space-between; 
+  flex-wrap: wrap; 
+  gap: 1.5rem 2rem; 
+}
+body:has(input[value='blue']:checked) .container .item {
+  background-color: #007bff;
+  flex-basis: 28%; 
+  flex-grow: 0; 
+  flex-shrink: 0;
+}
+
+
+body:has(input[value='blue']:checked) .container .item{
+background-color: #0402fc;
+ flex-basis: 28%; 
+  flex-grow: 0; 
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  body:has(input[value='blue']:checked) .container {
+    flex-direction: column; 
+    align-items: center; 
+    gap: 1rem;
+  }
+
+  body:has(input[value='blue']:checked) .container .item {
+    flex-basis: 100%; 
+    width: 90%; 
+    margin-right: 0; 
+  }
+}
+/*---------- red --------------*/
+
+body:has(input[value='red']:checked) {
+  .container {
+    .item {
+      background-color: #dc3545;
+      flex-basis: auto;
+
+      @media (max-width: 1024px) {
+        flex-basis: 45%;
+      }
+
+      &:nth-of-type(1) {
+        order: 3;
+        flex-grow: 2;
+        font-weight: 900;
+
+        &::after {
+          content: '\A(Jestem większy i na środku!)';
+          white-space: pre;
+          display: block;
+          font-size: 80%;
+          font-weight: normal;
+        }
+
+        @media (max-width: 1024px) {
+          flex-basis: 100%;
+        }
+      }
+
+      &:nth-of-type(2) { order: 1; }
+      &:nth-of-type(3) { order: 2; }
+      &:nth-of-type(4) { order: 4; }
+      &:nth-of-type(5) { order: 5; }
+      
+    }
+  }
+}
+
+
+/*-------green------*/
+
+body:has(input[value='green']:checked) {
+  .container {
+    .item {
+      background-color: #28a745;
+      flex-basis: 0;
+
+      @media (max-width: 1024px) {
+        flex-basis: auto;
+        flex-grow: 0;
+      }
+
+      &:nth-of-type(1) { flex-grow: 5; }
+      &:nth-of-type(2) { flex-grow: 4; }
+      &:nth-of-type(3) { flex-grow: 3; }
+      &:nth-of-type(4) { flex-grow: 2; }
+      &:nth-of-type(5) { flex-grow: 1; }
+
+      &:nth-of-type(2) {
+        @media (max-width: 1024px) { width: 90%; }
+      }
+      &:nth-of-type(3) {
+        @media (max-width: 1024px) { width: 80%; }
+      }
+      &:nth-of-type(4) {
+        @media (max-width: 1024px) { width: 70%; }
+      }
+      &:nth-of-type(5) {
+        @media (max-width: 1024px) { width: 60%; }
+      }
+
+       &:nth-of-type(1) {
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        padding: 0 1rem; 
+
+        &::before {
+          content: '😀';
+          font-size: 2em;
+           line-height: 1.5; 
+          vertical-align: middle;
+         
+        }
+
+        &::after {
+          content: '😀';
+          font-size: 2em;
+          line-height: 1.5;
+          vertical-align: middle;
+          
+        }
+
+        @media (max-width: 1024px) {
+          width: 100%;
+          align-self: auto;
+        }
+      }
+    }
+
+    @media (max-width: 1024px) {
+      flex-direction: column-reverse;
+      align-items: flex-end;
+    }
+    }
+
+    @media (max-width: 1024px) {
+      flex-direction: column-reverse;
+      align-items: flex-end;
+    }
+  }
