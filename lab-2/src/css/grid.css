@@ -44,12 +44,12 @@ main, aside {
       grid-row: 3 / 4; 
       padding: 1rem; 
     } 
-      /* wyłącz hamburger */
+     
     .menu-btn {
       display: none;
     }
 
-    /* pokaż normalną nawigację */
+   
     nav {
       position: static;
       
