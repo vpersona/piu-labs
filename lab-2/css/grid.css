@@ -43,7 +43,29 @@ main, aside {
       grid-column: 1 / 2;
       grid-row: 3 / 4; 
       padding: 1rem; 
+    } 
+      /* wyłącz hamburger */
+    .menu-btn {
+      display: none;
     }
+
+    /* pokaż normalną nawigację */
+    nav {
+      position: static;
+      
+      transform: none;
+      opacity: 1;
+      pointer-events: auto;
+      padding: 0;
+      max-height: none;
+      overflow: visible;
+    }
+
+    nav a {
+      
+      margin: 0 0.75rem;
+    }
+
     aside { 
       grid-column: 2 / 3; 
       grid-row: 3 / 4; 
@@ -121,6 +143,9 @@ header{
     background:#f39c11;
     color:white;
     padding:0.5rem 1rem;
+    z-index: 50;
+    position: sticky;
+
 }
 
 
@@ -184,4 +209,108 @@ footer{
     bottom: 0;
     padding: 0;
     width:100%
+}
+
+
+
+/*================MENU HAMBURGER====================*/
+:root { --header-h: 60px; }
+
+#menu{
+  position: absolute;
+ 
+  width: 1px;
+  height:1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.menu-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 0px;
+  background: transparent;
+  color: white;
+  border: none;
+  
+  z-index: 60;
+}
+
+.menu-btn::before{
+  content: "☰";
+  display: inline-block;
+  line-height: 1;
+}
+
+#menu:checked ~header .menu-btn::before {
+  content: "✕";
+}
+
+
+
+nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: var(--header-h);           
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  background: rgba(41,128,185,0.98);
+  transform: translateY(-8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 220ms ease, opacity 220ms ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  max-height: 45vh;               
+  overflow-y: auto;              
+  z-index: 40;   
+}
+
+nav a {
+    font-size: 1.1rem;
+  display: block;
+  margin: 0.25rem 0;
+  padding: 0.5rem 0.75rem;
+ 
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  background: transparent;
+}
+
+
+#menu:checked ~ nav {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+  
+}
+
+
+
+@media (min-width: 1024px) {
+  .menu-btn { display: none; }
+  #menu-toggle { display: none; }
+
+ 
+  nav {
+    position: static;
+    transform: none;
+    display: block;
+    padding: 0.5rem 1rem;
+    background: #2980b9;
+  }
+
+  nav a { font-size: 1rem; display: inline; margin-right: 20px; background: none; max-width: none; padding: 0; }
 }
