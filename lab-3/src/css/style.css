@@ -156,13 +156,37 @@ p{
 }
 label {
   font-size: 30px;
+  transition: border-color 0.2s ease-in-out;
+  border: 2px solid transparent;
+  border-radius: 50%;
 }
 
 label:hover{
   cursor: pointer;
+  border-color: var(--size-bg);
 }
 
 }
+
+
+#blue:checked ~ .container .color label[for="blue"],
+#red:checked ~ .container .color label[for="red"],
+#green:checked ~ .container .color label[for="green"],
+#yellow:checked ~ .container .color label[for="yellow"] {
+   
+    border-color: var(--size-bg); 
+}
+
+
+#blue:checked ~ .container .color label[for="blue"]:hover,
+#red:checked ~ .container .color label[for="red"]:hover,
+#green:checked ~ .container .color label[for="green"]:hover,
+#yellow:checked ~ .container .color label[for="yellow"]:hover {
+    
+    border-color: black; 
+}
+
+
 
 
 .rozmiar{
@@ -179,12 +203,21 @@ label:hover{
     font-weight: 700;
     margin-right: 10px;
     border: 2px solid black;
-    
+    transition: background-color 0.2s ease, transform 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease, color 0.2s ease;
   }
 
   button:hover{
     cursor: pointer;
     background-color: var(--size-bg);
+    color: white; 
+    transform: scale(1.1) translateY(-3px); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
+    border: 2px solid white;
+  }
+
+  button:active {
+    transform: scale(0.75);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -205,10 +238,19 @@ label:hover{
   justify-content: center;
   border: 2px solid black;
   margin: 10px auto;
+  transition: background-color 0.2s ease, transform 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.kosz:active{
+  transform: scale(0.75);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .kosz:hover{
   cursor: pointer;
+  border: 2px solid white;
+  transform: scale(1.1) translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 .preview {
