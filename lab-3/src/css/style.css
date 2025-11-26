@@ -1,0 +1,234 @@
+/* Minimalny reset  */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px; /* bazowy rozmiar czcionki */
+  font-family: system-ui, sans-serif; /* font systemowy */
+  line-height: 1.5; /* lepsza czytelność */
+}
+body {
+  margin: 0;
+  padding: 1rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+a {
+  color: #0066cc; /* niebieski kolor linków */
+  text-decoration: none; /* bez podkreślenia */
+  font-size: 1.4rem;
+}
+a:hover {
+  text-decoration: underline; /* podkreślenie przy najechaniu */
+}
+
+
+input[type='radio']{
+  display: none;
+}
+
+:root {
+ 
+  --shirt-img: url("../images/polo_b.png");
+  --promo-bg: rgb(64, 61, 199);
+  --size-bg: rgb(64, 61, 199);
+}
+
+/*===================================Zmiana obrazka=========================*/
+
+#blue:checked ~ .container .preview {
+  --shirt-img: url("../images/polo_b.png");
+}
+
+#red:checked ~ .container .preview {
+  --shirt-img: url("../images/polo_r.png");
+}
+
+#green:checked ~ .container .preview {
+  --shirt-img: url("../images/polo_g.png");
+}
+
+#yellow:checked ~ .container .preview {
+  --shirt-img: url("../images/polo_y.png");
+}
+
+/*===================Promocja -zmiana koloru==================*/
+
+#blue:checked ~ .container .text .header p {
+  --promo-bg: rgb(64, 61, 199); 
+}
+
+#red:checked ~ .container .text .header p {
+   --promo-bg: rgb(211, 47, 47); 
+}
+
+#green:checked ~ .container .text .header {
+   --promo-bg: rgb(56, 142, 60); 
+}
+
+#yellow:checked ~ .container .text .header {
+   --promo-bg: rgb(255, 193, 7); 
+}
+/*====================Zmiana koloru rozmiaru========================================*/
+#blue:checked ~ .container {
+  --size-bg: rgb(64, 61, 199); 
+}
+
+#red:checked ~ .container {
+  --size-bg: rgb(211, 47, 47); 
+}
+
+#green:checked ~ .container {
+  --size-bg: rgb(56, 142, 60); 
+}
+
+#yellow:checked ~ .container {
+  --size-bg: rgb(255, 193, 7); 
+}
+/*=======================================================================*/
+
+
+.container {
+
+  --shirt-img: url("../images/polo_b.png");
+  background-color:#eeeeee;
+  display: flex;
+  justify-content: center;
+  padding: 20px 20px;
+  width: calc(100%-2rem);
+  max-width: 950px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap:30px;
+  margin: 0 auto;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: center;
+  width: 300px;  
+  
+  
+}
+
+.text > p:first-of-type {
+  margin-top: -10px;
+  text-align: left;
+  float: left;
+  
+}
+
+h1{
+  display: inline-block;
+  font-size: 25px;
+}
+
+.header{
+  display: flex;
+  float: left;
+}
+.header p {
+  background-color: var(--promo-bg);
+  text-align: center;
+  border-radius: 3px;
+  color:white;
+  margin-left: 10px;
+  height:30px;
+  width: 100px;
+  font-weight: 700;
+  margin-left: 30px;
+  margin-top:20px;
+  
+}
+
+.color{
+
+p{
+  font-weight: 700;;
+  margin-bottom:5px;
+}
+label {
+  font-size: 30px;
+}
+
+label:hover{
+  cursor: pointer;
+}
+
+}
+
+
+.rozmiar{
+ 
+  p{
+    
+    font-weight: 700;
+  }
+
+  button{
+    border-radius: 3px;
+    width: 40px;
+    height: 40px;
+    font-weight: 700;
+    margin-right: 10px;
+    border: 2px solid black;
+    
+  }
+
+  button:hover{
+    cursor: pointer;
+    background-color: var(--size-bg);
+  }
+}
+
+.cena{
+  font-weight: 700;
+  font-size: 20px;  
+}
+
+.kosz {
+  background-color: var(--size-bg);
+  border-radius: 5px;
+  width: 150px;
+  height: 50px;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  margin: 10px auto;
+}
+
+.kosz:hover{
+  cursor: pointer;
+}
+
+.preview {
+  width: 500px;
+  aspect-ratio: 1 /1;
+  margin: 0 auto;
+  border-radius: 5px;
+  border: 2px solid var(--size-bg);
+  background-color: white;
+  background-image: var(--shirt-img);
+  background-size: cover;
+  background-position: center;
+  flex: 0 0 auto;
+  align-items: center;
+  text-align: center;
+}
+
+.preview, .text {
+  overflow: hidden;
+}
+
+
+
