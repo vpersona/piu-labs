@@ -3,10 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <title>Lab 4</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="src/css/style.css" />
+    
   </head>
   <body>
-    <h1>Lab 4</h1>
+    <h1>Kanban</h1>
+   
+
+    <div id="kanban-board">
+
+      <div class="kanban-column" id="to-do">
+        <div class="column-header">
+          <h2>Do Zrobienia</h2>
+          <div class="header-controls">
+          <span class="card-count">0</span>
+          <select class="sort-select" data-column-id="to-do">
+            <option value="date-asc" selected>Najstarsze (Data dodania)</option>
+            <option value="date-desc">Najnowsze (Data dodania)</option>
+            <option value="title-asc">Tytuł (A-Z)</option>
+          </select>
+        </div>
+        </div>
+          <button class="action-button" data-action="add-card">Dodaj kartę</button>
+          <button class="action-button" data-action="recolor-column">Koloruj kolumnę</button>
+          <div class="cards-container"></div>
+      </div>
+
+      <div class="kanban-column" id="in-progress">
+        <div class="column-header">
+          <h2>W trakcie</h2>
+          <div class="header-controls">
+          <span class="card-count">0</span>
+          <select class="sort-select" data-column-id="in-progress">
+            <option value="date-asc" selected>Najstarsze (Data dodania)</option>
+            <option value="date-desc">Najnowsze (Data dodania)</option>
+            <option value="title-asc">Tytuł (A-Z)</option>
+          </select>
+        </div>
+       </div>
+          <button class="action-button" data-action="add-card">Dodaj kartę</button>
+          <button class="action-button" data-action="recolor-column">Koloruj kolumnę</button>
+          <div class="cards-container"></div>
+      </div>
+
+      <div class="kanban-column" id="done">
+        <div class="column-header">
+          <h2>Zrobione</h2>
+          <div class="header-controls">
+          <span class="card-count">0</span>
+          <select class="sort-select" data-column-id="done">
+            <option value="date-asc" selected>Najstarsze (Data dodania)</option>
+            <option value="date-desc">Najnowsze (Data dodania)</option>
+            <option value="title-asc">Tytuł (A-Z)</option>
+          </select>
+        </div>
+       </div>
+          <button class="action-button" data-action="add-card">Dodaj kartę</button>
+          <button class="action-button" data-action="recolor-column">Koloruj kolumnę</button>
+          <div class="cards-container"></div>
+      </div>
+
+    </div>
     <a href="..">Powrót</a>
+ 
+
+    <script src="src/js/script.js"></script>
   </body>
 </html>
