@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <title>Lab 5</title>
+  <link rel="stylesheet" href="src/css/style.css">
+  
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Kształty</h1>
+    
+    </header>
+
+    <div class="controls">
+      <button id="addSquare" data-action="add" data-shape="square">➕ 🟦</button>
+      <button id="addCircle" data-action="add" data-shape="circle">➕ 🔴</button>
+      <button id="recolorSquares" data-action="recolor" data-shape="square">Przekoloruj kwadraty</button>
+      <button id="recolorCircles" data-action="recolor" data-shape="circle">Przekoloruj kółka</button>
+    </div>
+
+    <p class="note">Aby usunąć dany kształt, kliknij na niego.</p>
+
+    <div class="counters">
+      <span>Liczba kwadratów: <strong id="cntSquares">0</strong></span>
+      &nbsp;|&nbsp;
+      <span>Liczba kółek: <strong id="cntCircles">0</strong></span>
+    </div>
+
+    <div id="board" class="board" aria-label="Pole z kształtami">
+      </div>
+  </div>
+
+  <script type="module" src="src/js/app.js"></script>
+</body>
+</html>

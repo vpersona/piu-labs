@@ -1,0 +1,117 @@
+/* style.css - Ulepszona wersja bazowa */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 30px;
+  background-color: #feeefd; /* Jasne, chłodne tło */
+  color: #333;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  /* Subtelny, nowoczesny cień */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+}
+
+header {
+  margin-bottom: 25px;
+  border-bottom: 2px solid #a6a6a6;
+  padding-bottom: 15px;
+}
+
+h1 {
+  color: #eeb1e6; /* Głęboki, ale przyjemny niebieski */
+  font-size: 2.2em;
+}
+
+.note {
+  font-size: 0.95em;
+  color: #b897b6;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+.controls {
+  margin-bottom: 20px;
+}
+
+button {
+  margin: 6px;
+  padding: 10px 18px;
+  min-width: 180px;
+  cursor: pointer;
+  border: 1px solid #762169; /* Cienka ramka */
+  border-radius: 6px;
+  background-color: #eeb1e6; /* Czysty niebieski akcent */
+  color: white;
+  font-weight: 600;
+  transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #c187b8;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+button:active {
+  background-color: #762169;
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.counters {
+  margin: 20px 0;
+  padding: 12px;
+  background-color: #f8dff3; /* Delikatnie inny kolor tła dla liczników */
+  border-radius: 6px;
+  font-size: 1.1em;
+  border: 5px solid #eeb1e6; /* Wizualny akcent */
+}
+
+.counters strong {
+  color: #e63946; /* Wyrazisty, kontrastowy kolor */
+  font-weight: bold;
+}
+
+.board {
+  margin: 20px auto;
+  min-height: 200px;
+  border: 2px dashed #f4b9ec;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  background: #fafcff; /* Bardzo jasne tło tablicy */
+  border-radius: 8px;
+  align-content: flex-start;
+}
+
+.shape {
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  border: 3px solid #34495e; /* Lekko grubsza, ciemniejsza krawędź */
+  box-sizing: border-box;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.shape:hover {
+  transform: scale(1.1);
+  /* Dodaję mały cień do kształtów przy najechaniu, aby wydawały się 'uniesione' */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
+}
+
+.square {
+  border-radius: 8px;
+}
+
+.circle {
+  border-radius: 50%;
+}
